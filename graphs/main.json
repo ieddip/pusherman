@@ -118,6 +118,46 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "ieddip.image.core/image->buffer-converter_sxap2": {
+            "component": "ieddip.image.core/image->buffer-converter",
+            "metadata": {
+                "label": "ieddip.image.core/image->buffer-converter",
+                "x": 180,
+                "y": 396,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "ieddip.image.core/buffer->base64-converter_j1jgs": {
+            "component": "ieddip.image.core/buffer->base64-converter",
+            "metadata": {
+                "label": "ieddip.image.core/buffer->base64-converter",
+                "x": 432,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "ieddip.mqtt.core/serializer_e2xrx": {
+            "component": "ieddip.mqtt.core/serializer",
+            "metadata": {
+                "label": "ieddip.mqtt.core/serializer",
+                "x": 648,
+                "y": 504,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "ieddip.mqtt.core/mqtt-publisher_gut3o": {
+            "component": "ieddip.mqtt.core/mqtt-publisher",
+            "metadata": {
+                "label": "ieddip.mqtt.core/mqtt-publisher",
+                "x": 900,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
@@ -129,8 +169,7 @@
             "tgt": {
                 "process": "ieddip.image.core/image-resizer_t7j86",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -140,8 +179,7 @@
             "tgt": {
                 "process": "ieddip.image.core/image->buffer-converter_tvvjl",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -151,8 +189,7 @@
             "tgt": {
                 "process": "ieddip.image.core/buffer->base64-converter_mrevm",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -162,8 +199,7 @@
             "tgt": {
                 "process": "ieddip.mqtt.core/serializer_xlx6e",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -173,8 +209,7 @@
             "tgt": {
                 "process": "ieddip.mqtt.core/mqtt-publisher_ldzwo",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -184,8 +219,7 @@
             "tgt": {
                 "process": "ieddip.mqtt.core/deserializer_t8xlr",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -195,8 +229,7 @@
             "tgt": {
                 "process": "ieddip.dbm.core/image->couch-doc-converter_eb9gk",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -206,8 +239,7 @@
             "tgt": {
                 "process": "ieddip.dbm.core/couch-putter_dbk1p",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -217,15 +249,53 @@
             "tgt": {
                 "process": "ieddip.image.core/image-loader_bmji6",
                 "port": "in"
+            }
+        },
+        {
+            "src": {
+                "process": "ieddip.image.core/image-loader_bmji6",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "ieddip.image.core/image->buffer-converter_sxap2",
+                "port": "in"
+            },
+            "metadata": {
+                "route": 0
+            }
+        },
+        {
+            "src": {
+                "process": "ieddip.image.core/image->buffer-converter_sxap2",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "ieddip.image.core/buffer->base64-converter_j1jgs",
+                "port": "in"
             },
             "metadata": {}
         },
         {
-            "data": "{\"w\": 200, \"h\": 100}",
+            "src": {
+                "process": "ieddip.image.core/buffer->base64-converter_j1jgs",
+                "port": "out"
+            },
             "tgt": {
-                "process": "ieddip.image.core/image-resizer_t7j86",
-                "port": "config"
-            }
+                "process": "ieddip.mqtt.core/serializer_e2xrx",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "ieddip.mqtt.core/serializer_e2xrx",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "ieddip.mqtt.core/mqtt-publisher_gut3o",
+                "port": "in"
+            },
+            "metadata": {}
         },
         {
             "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topic\": \"macbook/image\"} ",
@@ -252,6 +322,20 @@
             "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
             "tgt": {
                 "process": "ieddip.camera.core/file-watcher_s9fai",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topic\": \"macbook/image\"} ",
+            "tgt": {
+                "process": "ieddip.mqtt.core/mqtt-publisher_gut3o",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"w\": 100, \"h\": 100}",
+            "tgt": {
+                "process": "ieddip.image.core/image-resizer_t7j86",
                 "port": "config"
             }
         }
