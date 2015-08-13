@@ -73,8 +73,8 @@
             "component": "ieddip.mqtt.core/mqtt-consumer",
             "metadata": {
                 "label": "ieddip.mqtt.core/mqtt-consumer",
-                "x": -180,
-                "y": 0,
+                "x": -144,
+                "y": -36,
                 "width": 72,
                 "height": 72
             }
@@ -109,12 +109,12 @@
                 "height": 72
             }
         },
-        "ieddip.camera.core/file-watcher_9748f": {
+        "ieddip.camera.core/file-watcher_s9fai": {
             "component": "ieddip.camera.core/file-watcher",
             "metadata": {
                 "label": "ieddip.camera.core/file-watcher",
                 "x": -144,
-                "y": 180,
+                "y": 216,
                 "width": 72,
                 "height": 72
             }
@@ -211,7 +211,7 @@
         },
         {
             "src": {
-                "process": "ieddip.camera.core/file-watcher_9748f",
+                "process": "ieddip.camera.core/file-watcher_s9fai",
                 "port": "out"
             },
             "tgt": {
@@ -251,7 +251,7 @@
         {
             "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
             "tgt": {
-                "process": "ieddip.camera.core/file-watcher_9748f",
+                "process": "ieddip.camera.core/file-watcher_s9fai",
                 "port": "config"
             }
         }
