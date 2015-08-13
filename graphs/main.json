@@ -13,8 +13,8 @@
             "component": "ieddip.camera.core/file-watcher",
             "metadata": {
                 "label": "ieddip.camera.core/file-watcher",
-                "x": -180,
-                "y": -36,
+                "x": -216,
+                "y": -72,
                 "width": 72,
                 "height": 72
             }
@@ -23,8 +23,8 @@
             "component": "ieddip.image.core/image-loader",
             "metadata": {
                 "label": "ieddip.image.core/image-loader",
-                "x": 0,
-                "y": 72,
+                "x": -36,
+                "y": 36,
                 "width": 72,
                 "height": 72
             }
@@ -34,7 +34,7 @@
             "metadata": {
                 "label": "ieddip.image.core/image-resizer",
                 "x": 180,
-                "y": -72,
+                "y": -36,
                 "width": 72,
                 "height": 72
             }
@@ -224,6 +224,34 @@
             "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
             "tgt": {
                 "process": "ieddip.camera.core/file-watcher_xmu2k",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"w\": 200, \"h\": 100}",
+            "tgt": {
+                "process": "ieddip.image.core/image-resizer_t7j86",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topic\": \"macbook/image\"} ",
+            "tgt": {
+                "process": "ieddip.mqtt.core/mqtt-publisher_ldzwo",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topics\": {\"macbook\": 0}} ",
+            "tgt": {
+                "process": "ieddip.mqtt.core/mqtt-consumer_g3mnr",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"endpoint\": \"http://127.0.0.1:5984/macbook\"}",
+            "tgt": {
+                "process": "ieddip.dbm.core/couch-putter_dbk1p",
                 "port": "config"
             }
         }
