@@ -13,8 +13,8 @@
             "component": "ieddip.image.core/image-loader",
             "metadata": {
                 "label": "ieddip.image.core/image-loader",
-                "x": -72,
-                "y": 72,
+                "x": 36,
+                "y": 288,
                 "width": 72,
                 "height": 72
             }
@@ -23,8 +23,8 @@
             "component": "ieddip.image.core/image-resizer",
             "metadata": {
                 "label": "ieddip.image.core/image-resizer",
-                "x": 180,
-                "y": -36,
+                "x": 288,
+                "y": 180,
                 "width": 72,
                 "height": 72
             }
@@ -33,8 +33,8 @@
             "component": "ieddip.image.core/image->buffer-converter",
             "metadata": {
                 "label": "ieddip.image.core/image->buffer-converter",
-                "x": 324,
-                "y": 72,
+                "x": 432,
+                "y": 288,
                 "width": 72,
                 "height": 72
             }
@@ -43,8 +43,8 @@
             "component": "ieddip.image.core/buffer->base64-converter",
             "metadata": {
                 "label": "ieddip.image.core/buffer->base64-converter",
-                "x": 468,
-                "y": -72,
+                "x": 612,
+                "y": 144,
                 "width": 72,
                 "height": 72
             }
@@ -53,8 +53,8 @@
             "component": "ieddip.mqtt.core/serializer",
             "metadata": {
                 "label": "ieddip.mqtt.core/serializer",
-                "x": 648,
-                "y": 36,
+                "x": 828,
+                "y": 324,
                 "width": 72,
                 "height": 72
             }
@@ -63,8 +63,8 @@
             "component": "ieddip.mqtt.core/mqtt-publisher",
             "metadata": {
                 "label": "ieddip.mqtt.core/mqtt-publisher",
-                "x": 900,
-                "y": 108,
+                "x": 1044,
+                "y": 180,
                 "width": 72,
                 "height": 72
             }
@@ -73,8 +73,8 @@
             "component": "ieddip.mqtt.core/mqtt-consumer",
             "metadata": {
                 "label": "ieddip.mqtt.core/mqtt-consumer",
-                "x": -108,
-                "y": 288,
+                "x": -180,
+                "y": 0,
                 "width": 72,
                 "height": 72
             }
@@ -83,8 +83,8 @@
             "component": "ieddip.mqtt.core/deserializer",
             "metadata": {
                 "label": "ieddip.mqtt.core/deserializer",
-                "x": 72,
-                "y": 432,
+                "x": 108,
+                "y": 36,
                 "width": 72,
                 "height": 72
             }
@@ -93,8 +93,8 @@
             "component": "ieddip.dbm.core/image->couch-doc-converter",
             "metadata": {
                 "label": "ieddip.dbm.core/image->couch-doc-converter",
-                "x": 324,
-                "y": 360,
+                "x": 432,
+                "y": -36,
                 "width": 72,
                 "height": 72
             }
@@ -103,8 +103,8 @@
             "component": "ieddip.dbm.core/couch-putter",
             "metadata": {
                 "label": "ieddip.dbm.core/couch-putter",
-                "x": 540,
-                "y": 288,
+                "x": 756,
+                "y": -72,
                 "width": 72,
                 "height": 72
             }
@@ -113,8 +113,8 @@
             "component": "ieddip.camera.core/file-watcher",
             "metadata": {
                 "label": "ieddip.camera.core/file-watcher",
-                "x": -252,
-                "y": -36,
+                "x": -144,
+                "y": 180,
                 "width": 72,
                 "height": 72
             }
