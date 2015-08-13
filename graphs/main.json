@@ -9,16 +9,6 @@
     "outports": {},
     "groups": [],
     "processes": {
-        "ieddip.camera.core/file-watcher_xmu2k": {
-            "component": "ieddip.camera.core/file-watcher",
-            "metadata": {
-                "label": "ieddip.camera.core/file-watcher",
-                "x": -288,
-                "y": -72,
-                "width": 72,
-                "height": 72
-            }
-        },
         "ieddip.image.core/image-loader_bmji6": {
             "component": "ieddip.image.core/image-loader",
             "metadata": {
@@ -73,8 +63,8 @@
             "component": "ieddip.mqtt.core/mqtt-publisher",
             "metadata": {
                 "label": "ieddip.mqtt.core/mqtt-publisher",
-                "x": 864,
-                "y": 36,
+                "x": 900,
+                "y": 108,
                 "width": 72,
                 "height": 72
             }
@@ -118,20 +108,19 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "ieddip.camera.core/file-watcher_9748f": {
+            "component": "ieddip.camera.core/file-watcher",
+            "metadata": {
+                "label": "ieddip.camera.core/file-watcher",
+                "x": -252,
+                "y": -36,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
-        {
-            "src": {
-                "process": "ieddip.camera.core/file-watcher_xmu2k",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "ieddip.image.core/image-loader_bmji6",
-                "port": "in"
-            },
-            "metadata": {}
-        },
         {
             "src": {
                 "process": "ieddip.image.core/image-loader_bmji6",
@@ -221,11 +210,15 @@
             "metadata": {}
         },
         {
-            "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
+            "src": {
+                "process": "ieddip.camera.core/file-watcher_9748f",
+                "port": "out"
+            },
             "tgt": {
-                "process": "ieddip.camera.core/file-watcher_xmu2k",
-                "port": "config"
-            }
+                "process": "ieddip.image.core/image-loader_bmji6",
+                "port": "in"
+            },
+            "metadata": {}
         },
         {
             "data": "{\"w\": 200, \"h\": 100}",
@@ -252,6 +245,13 @@
             "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topics\": {\"macbook/image\": 0}} ",
             "tgt": {
                 "process": "ieddip.mqtt.core/mqtt-consumer_g3mnr",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
+            "tgt": {
+                "process": "ieddip.camera.core/file-watcher_9748f",
                 "port": "config"
             }
         }
