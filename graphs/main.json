@@ -13,7 +13,7 @@
             "component": "ieddip.camera.core/file-watcher",
             "metadata": {
                 "label": "ieddip.camera.core/file-watcher",
-                "x": -216,
+                "x": -288,
                 "y": -72,
                 "width": 72,
                 "height": 72
@@ -23,8 +23,8 @@
             "component": "ieddip.image.core/image-loader",
             "metadata": {
                 "label": "ieddip.image.core/image-loader",
-                "x": -36,
-                "y": 36,
+                "x": -72,
+                "y": 72,
                 "width": 72,
                 "height": 72
             }
@@ -74,7 +74,7 @@
             "metadata": {
                 "label": "ieddip.mqtt.core/mqtt-publisher",
                 "x": 864,
-                "y": 0,
+                "y": 36,
                 "width": 72,
                 "height": 72
             }
@@ -83,8 +83,8 @@
             "component": "ieddip.mqtt.core/mqtt-consumer",
             "metadata": {
                 "label": "ieddip.mqtt.core/mqtt-consumer",
-                "x": -72,
-                "y": 396,
+                "x": -108,
+                "y": 288,
                 "width": 72,
                 "height": 72
             }
@@ -93,8 +93,8 @@
             "component": "ieddip.mqtt.core/deserializer",
             "metadata": {
                 "label": "ieddip.mqtt.core/deserializer",
-                "x": 144,
-                "y": 288,
+                "x": 72,
+                "y": 432,
                 "width": 72,
                 "height": 72
             }
@@ -242,16 +242,16 @@
             }
         },
         {
-            "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topics\": {\"macbook\": 0}} ",
+            "data": "{\"endpoint\": \"http://127.0.0.1:5984/macbook\"}",
             "tgt": {
-                "process": "ieddip.mqtt.core/mqtt-consumer_g3mnr",
+                "process": "ieddip.dbm.core/couch-putter_dbk1p",
                 "port": "config"
             }
         },
         {
-            "data": "{\"endpoint\": \"http://127.0.0.1:5984/macbook\"}",
+            "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topics\": {\"macbook/image\": 0}} ",
             "tgt": {
-                "process": "ieddip.dbm.core/couch-putter_dbk1p",
+                "process": "ieddip.mqtt.core/mqtt-consumer_g3mnr",
                 "port": "config"
             }
         }
