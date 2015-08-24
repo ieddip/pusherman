@@ -9,16 +9,6 @@
     "outports": {},
     "groups": [],
     "processes": {
-        "ieddip.camera.core|file-watcher_7pkgm": {
-            "component": "ieddip.camera.core|file-watcher",
-            "metadata": {
-                "label": "ieddip.camera.core|file-watcher",
-                "x": 108,
-                "y": 180,
-                "width": 72,
-                "height": 72
-            }
-        },
         "ieddip.image.core|image-loader_m645t": {
             "component": "ieddip.image.core|image-loader",
             "metadata": {
@@ -108,20 +98,19 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "ieddip.camera.core|file-watcher_57ih7": {
+            "component": "ieddip.camera.core|file-watcher",
+            "metadata": {
+                "label": "ieddip.camera.core|file-watcher",
+                "x": 108,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
-        {
-            "src": {
-                "process": "ieddip.camera.core|file-watcher_7pkgm",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "ieddip.image.core|image-loader_m645t",
-                "port": "in"
-            },
-            "metadata": {}
-        },
         {
             "src": {
                 "process": "ieddip.image.core|image-loader_m645t",
@@ -200,11 +189,15 @@
             "metadata": {}
         },
         {
-            "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
+            "src": {
+                "process": "ieddip.camera.core|file-watcher_57ih7",
+                "port": "out"
+            },
             "tgt": {
-                "process": "ieddip.camera.core|file-watcher_7pkgm",
-                "port": "config"
-            }
+                "process": "ieddip.image.core|image-loader_m645t",
+                "port": "in"
+            },
+            "metadata": {}
         },
         {
             "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topic\": \"macbook/image\"}",
@@ -224,6 +217,13 @@
             "data": "{\"endpoint\": \"http://127.0.0.1:5984/macbook}",
             "tgt": {
                 "process": "ieddip.dbm.core|couch-putter_8d8jh",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
+            "tgt": {
+                "process": "ieddip.camera.core|file-watcher_57ih7",
                 "port": "config"
             }
         }
