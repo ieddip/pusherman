@@ -89,22 +89,22 @@
                 "height": 72
             }
         },
-        "ieddip.dbm.core|couch-putter_8d8jh": {
-            "component": "ieddip.dbm.core|couch-putter",
-            "metadata": {
-                "label": "ieddip.dbm.core|couch-putter",
-                "x": 936,
-                "y": 468,
-                "width": 72,
-                "height": 72
-            }
-        },
         "ieddip.camera.core|file-watcher_57ih7": {
             "component": "ieddip.camera.core|file-watcher",
             "metadata": {
                 "label": "ieddip.camera.core|file-watcher",
-                "x": 108,
-                "y": 36,
+                "x": 144,
+                "y": 252,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "ieddip.dbm.core|couch-putter_vav74": {
+            "component": "ieddip.dbm.core|couch-putter",
+            "metadata": {
+                "label": "ieddip.dbm.core|couch-putter",
+                "x": 1008,
+                "y": 432,
                 "width": 72,
                 "height": 72
             }
@@ -179,17 +179,6 @@
         },
         {
             "src": {
-                "process": "ieddip.dbm.core|image->couch-doc-converter_7c3mx",
-                "port": "out"
-            },
-            "tgt": {
-                "process": "ieddip.dbm.core|couch-putter_8d8jh",
-                "port": "in"
-            },
-            "metadata": {}
-        },
-        {
-            "src": {
                 "process": "ieddip.camera.core|file-watcher_57ih7",
                 "port": "out"
             },
@@ -198,6 +187,19 @@
                 "port": "in"
             },
             "metadata": {}
+        },
+        {
+            "src": {
+                "process": "ieddip.dbm.core|image->couch-doc-converter_7c3mx",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "ieddip.dbm.core|couch-putter_vav74",
+                "port": "in"
+            },
+            "metadata": {
+                "route": null
+            }
         },
         {
             "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topic\": \"macbook/image\"}",
@@ -214,16 +216,16 @@
             }
         },
         {
-            "data": "{\"endpoint\": \"http://127.0.0.1:5984/macbook}",
+            "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
             "tgt": {
-                "process": "ieddip.dbm.core|couch-putter_8d8jh",
+                "process": "ieddip.camera.core|file-watcher_57ih7",
                 "port": "config"
             }
         },
         {
-            "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
+            "data": "{\"endpoint\": \"http://127.0.0.1:5984/macbook\"}",
             "tgt": {
-                "process": "ieddip.camera.core|file-watcher_57ih7",
+                "process": "ieddip.dbm.core|couch-putter_vav74",
                 "port": "config"
             }
         }
