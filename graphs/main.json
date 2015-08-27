@@ -9,102 +9,122 @@
     "outports": {},
     "groups": [],
     "processes": {
-        "ieddip.image.core|image-loader_m645t": {
-            "component": "ieddip.image.core|image-loader",
+        "device-1|file-watcher_m7i0s": {
+            "component": "device-1|file-watcher",
             "metadata": {
-                "label": "ieddip.image.core|image-loader",
-                "x": 360,
-                "y": 108,
+                "label": "device-1|file-watcher",
+                "x": 144,
+                "y": 360,
                 "width": 72,
                 "height": 72
             }
         },
-        "ieddip.image.core|image->buffer-converter_gpmzd": {
-            "component": "ieddip.image.core|image->buffer-converter",
+        "device-1|image-loader_rcbuz": {
+            "component": "device-1|image-loader",
             "metadata": {
-                "label": "ieddip.image.core|image->buffer-converter",
-                "x": 540,
+                "label": "device-1|image-loader",
+                "x": 324,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "device-1|image->buffer-converter_2es0w": {
+            "component": "device-1|image->buffer-converter",
+            "metadata": {
+                "label": "device-1|image->buffer-converter",
+                "x": 504,
+                "y": 360,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "device-1|buffer->base64-converter_f1i2n": {
+            "component": "device-1|buffer->base64-converter",
+            "metadata": {
+                "label": "device-1|buffer->base64-converter",
+                "x": 684,
+                "y": 468,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "device-1|image->couch-doc-converter_8s05z": {
+            "component": "device-1|image->couch-doc-converter",
+            "metadata": {
+                "label": "device-1|image->couch-doc-converter",
+                "x": 684,
                 "y": 216,
                 "width": 72,
                 "height": 72
             }
         },
-        "ieddip.image.core|buffer->base64-converter_t56h": {
-            "component": "ieddip.image.core|buffer->base64-converter",
+        "device-1|couch-putter_6y49q": {
+            "component": "device-1|couch-putter",
             "metadata": {
-                "label": "ieddip.image.core|buffer->base64-converter",
-                "x": 792,
-                "y": 252,
+                "label": "device-1|couch-putter",
+                "x": 864,
+                "y": 288,
                 "width": 72,
                 "height": 72
             }
         },
-        "ieddip.mqtt.core|serializer_dg486": {
-            "component": "ieddip.mqtt.core|serializer",
+        "device-2|file-watcher_mqwqs": {
+            "component": "device-2|file-watcher",
             "metadata": {
-                "label": "ieddip.mqtt.core|serializer",
+                "label": "device-2|file-watcher",
+                "x": 108,
+                "y": 648,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "device-2|image-loader_sy9m4": {
+            "component": "device-2|image-loader",
+            "metadata": {
+                "label": "device-2|image-loader",
+                "x": 288,
+                "y": 684,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "device-2|image->buffer-converter_5shff": {
+            "component": "device-2|image->buffer-converter",
+            "metadata": {
+                "label": "device-2|image->buffer-converter",
+                "x": 468,
+                "y": 756,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "device-2|buffer->base64-converter_hrxqo": {
+            "component": "device-2|buffer->base64-converter",
+            "metadata": {
+                "label": "device-2|buffer->base64-converter",
+                "x": 684,
+                "y": 684,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "device-2|image->couch-doc-converter_sou4d": {
+            "component": "device-2|image->couch-doc-converter",
+            "metadata": {
+                "label": "device-2|image->couch-doc-converter",
+                "x": 864,
+                "y": 612,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "device-2|couch-putter_w4r2a": {
+            "component": "device-2|couch-putter",
+            "metadata": {
+                "label": "device-2|couch-putter",
                 "x": 972,
-                "y": 144,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "ieddip.mqtt.core|mqtt-publisher_uf71w": {
-            "component": "ieddip.mqtt.core|mqtt-publisher",
-            "metadata": {
-                "label": "ieddip.mqtt.core|mqtt-publisher",
-                "x": 1152,
-                "y": 252,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "ieddip.mqtt.core|mqtt-consumer_asy5s": {
-            "component": "ieddip.mqtt.core|mqtt-consumer",
-            "metadata": {
-                "label": "ieddip.mqtt.core|mqtt-consumer",
-                "x": 180,
-                "y": 432,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "ieddip.mqtt.core|deserializer_7oh80": {
-            "component": "ieddip.mqtt.core|deserializer",
-            "metadata": {
-                "label": "ieddip.mqtt.core|deserializer",
-                "x": 396,
-                "y": 396,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "ieddip.dbm.core|image->couch-doc-converter_7c3mx": {
-            "component": "ieddip.dbm.core|image->couch-doc-converter",
-            "metadata": {
-                "label": "ieddip.dbm.core|image->couch-doc-converter",
-                "x": 648,
-                "y": 432,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "ieddip.camera.core|file-watcher_57ih7": {
-            "component": "ieddip.camera.core|file-watcher",
-            "metadata": {
-                "label": "ieddip.camera.core|file-watcher",
-                "x": 144,
-                "y": 252,
-                "width": 72,
-                "height": 72
-            }
-        },
-        "ieddip.dbm.core|couch-putter_vav74": {
-            "component": "ieddip.dbm.core|couch-putter",
-            "metadata": {
-                "label": "ieddip.dbm.core|couch-putter",
-                "x": 1008,
-                "y": 432,
+                "y": 504,
                 "width": 72,
                 "height": 72
             }
@@ -113,119 +133,139 @@
     "connections": [
         {
             "src": {
-                "process": "ieddip.image.core|image-loader_m645t",
+                "process": "device-1|file-watcher_m7i0s",
                 "port": "out"
             },
             "tgt": {
-                "process": "ieddip.image.core|image->buffer-converter_gpmzd",
+                "process": "device-1|image-loader_rcbuz",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "ieddip.image.core|image->buffer-converter_gpmzd",
+                "process": "device-1|image-loader_rcbuz",
                 "port": "out"
             },
             "tgt": {
-                "process": "ieddip.image.core|buffer->base64-converter_t56h",
+                "process": "device-1|image->buffer-converter_2es0w",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "ieddip.image.core|buffer->base64-converter_t56h",
+                "process": "device-1|image->buffer-converter_2es0w",
                 "port": "out"
             },
             "tgt": {
-                "process": "ieddip.mqtt.core|serializer_dg486",
+                "process": "device-1|buffer->base64-converter_f1i2n",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "ieddip.mqtt.core|serializer_dg486",
+                "process": "device-1|buffer->base64-converter_f1i2n",
                 "port": "out"
             },
             "tgt": {
-                "process": "ieddip.mqtt.core|mqtt-publisher_uf71w",
+                "process": "device-1|image->couch-doc-converter_8s05z",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "ieddip.mqtt.core|mqtt-consumer_asy5s",
+                "process": "device-1|image->couch-doc-converter_8s05z",
                 "port": "out"
             },
             "tgt": {
-                "process": "ieddip.mqtt.core|deserializer_7oh80",
+                "process": "device-1|couch-putter_6y49q",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "ieddip.mqtt.core|deserializer_7oh80",
+                "process": "device-2|file-watcher_mqwqs",
                 "port": "out"
             },
             "tgt": {
-                "process": "ieddip.dbm.core|image->couch-doc-converter_7c3mx",
+                "process": "device-2|image-loader_sy9m4",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "ieddip.camera.core|file-watcher_57ih7",
+                "process": "device-2|image-loader_sy9m4",
                 "port": "out"
             },
             "tgt": {
-                "process": "ieddip.image.core|image-loader_m645t",
+                "process": "device-2|image->buffer-converter_5shff",
                 "port": "in"
             },
             "metadata": {}
         },
         {
             "src": {
-                "process": "ieddip.dbm.core|image->couch-doc-converter_7c3mx",
+                "process": "device-2|image->buffer-converter_5shff",
                 "port": "out"
             },
             "tgt": {
-                "process": "ieddip.dbm.core|couch-putter_vav74",
+                "process": "device-2|buffer->base64-converter_hrxqo",
                 "port": "in"
             },
-            "metadata": {
-                "route": null
-            }
+            "metadata": {}
         },
         {
-            "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topic\": \"macbook/image\"}",
+            "src": {
+                "process": "device-2|buffer->base64-converter_hrxqo",
+                "port": "out"
+            },
             "tgt": {
-                "process": "ieddip.mqtt.core|mqtt-publisher_uf71w",
-                "port": "config"
-            }
+                "process": "device-2|image->couch-doc-converter_sou4d",
+                "port": "in"
+            },
+            "metadata": {}
         },
         {
-            "data": "{\"path\": \"tcp://127.0.0.1:1883\", \"topics\": {\"macbook/image\": 0}}",
+            "src": {
+                "process": "device-2|image->couch-doc-converter_sou4d",
+                "port": "out"
+            },
             "tgt": {
-                "process": "ieddip.mqtt.core|mqtt-consumer_asy5s",
-                "port": "config"
-            }
+                "process": "device-2|couch-putter_w4r2a",
+                "port": "in"
+            },
+            "metadata": {}
         },
         {
             "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
             "tgt": {
-                "process": "ieddip.camera.core|file-watcher_57ih7",
+                "process": "device-1|file-watcher_m7i0s",
                 "port": "config"
             }
         },
         {
             "data": "{\"endpoint\": \"http://127.0.0.1:5984/macbook\"}",
             "tgt": {
-                "process": "ieddip.dbm.core|couch-putter_vav74",
+                "process": "device-1|couch-putter_6y49q",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"endpoint\": \"http://127.0.0.1:5984/linuxbox\"}",
+            "tgt": {
+                "process": "device-2|couch-putter_w4r2a",
+                "port": "config"
+            }
+        },
+        {
+            "data": "{\"dir\": \"/home/ericmatti/Desktop/images\"}",
+            "tgt": {
+                "process": "device-2|file-watcher_mqwqs",
                 "port": "config"
             }
         }
